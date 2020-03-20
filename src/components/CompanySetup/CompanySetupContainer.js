@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { FormsProvider } from "components/forms/FormsContext";
 import CompanySetupForm from "./CompanySetupForm";
-import { objCopy } from "assets/js/library";
-import dataFetch from "assets/js/dataFetch";
+import { objCopy } from "../../assets/js/library";
+import dataFetch from "../../assets/js/dataFetch";
 import { isEmptyObject } from "assets/js/library";
 import Snackbar from "styledComponents/Snackbar";
 
@@ -93,7 +93,7 @@ class CompanySetupContainer extends Component {
 		delete body.contactPerson;
 		// need to know if this is a new skill or update
 		// (post vs put)
-		const id = this.state.formFields.id;
+		const id = companyInfo.id;
 		const httpMethod = id ? "PUT" : "POST";
 		const endpoint = id ? `${API_COMPANY}/${id}` : `${API_COMPANY}`;
 
@@ -209,7 +209,7 @@ class CompanySetupContainer extends Component {
 						action={this.state.toast.action}
 						autohide={this.state.toast.autoHide}
 						timeout={this.state.toast.timeout}
-						closeCallBk={this.closeToast}
+						onDismiss={this.closeToast}
 					/>
 				)}
 			</React.Fragment>

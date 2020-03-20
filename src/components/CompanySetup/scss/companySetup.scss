@@ -1,5 +1,6 @@
 // mixins
 //@import "../../../scss/mixins";
+
 .company-main {
 	text-align: center;
 	margin-top: 2em;
@@ -17,8 +18,12 @@
 		background: white;
 		color: #212529;
 		padding: 2em 2em 1em;
-		width: 700px;
+		width: 760px;
 		margin: 0 auto;
+	}
+
+	.addr-line > div:first-child {
+		width: 80%;
 	}
 
 	label.col-form-label.label-right {
@@ -26,6 +31,6 @@
 	}
 }
 
-.button-section button {
-	margin: 1em;
+.tsd-form-section + .tsd-form-section {
+	margin-top: 18px;
 }
